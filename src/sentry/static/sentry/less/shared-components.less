@@ -3275,7 +3275,6 @@ ul.tag-list {
 * Client platform list
 * ============================================================================
 */
-
 .client-platform-list {
   .list-unstyled;
   .clearfix;
@@ -3322,14 +3321,16 @@ ul.tag-list {
     text-shadow: 0 2px 0 rgba(0,0,0, .06);
     background: @gray; // Default BG
   }
+}
 
-  // Colors
+.client-platform-list, .client-platform {
 
   li, span {
     &.python .platformicon {
       background: darken(@blue, 6);
     }
     &.python-pylons .platformicon:before { content: "\e602"; }
+    &.python-celery .platformicon:before { content: "\e602"; }
     &.python-pyramid .platformicon:before { content: "\e602"; }
     &.python-tornado .platformicon:before { content: "\e602"; }
     &.python-rq .platformicon:before { content: "\e602"; }
@@ -3384,8 +3385,8 @@ ul.tag-list {
     &.node-koa .platformicon:before { content: "\e609"; }
 
     &.other .platformicon:before {
-      font-family: Menlo, Monaco, "Courier New", monospace;
-      content: "?";
+      // font-family: Menlo, Monaco, "Courier New", monospace;
+      // content: "\e60A";
     }
 
     &.objc .platformicon,
@@ -3424,6 +3425,15 @@ ul.tag-list {
 
     &.elixir .platformicon {
       background: @purple-dark;
+    }
+  }
+}
+
+.client-platform {
+    li, span {
+      .platformicon {
+        color:black !important;
+        background: white !important;
     }
   }
 }
